@@ -1,0 +1,13 @@
+.Footer {
+	bottom: 0px;
+	position: fixed;
+	height: 2rem;
+	width: 100%;
+	background-color: gray;
+}
+.FooterText {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
+}

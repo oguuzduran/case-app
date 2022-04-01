@@ -1,0 +1,26 @@
+.ListHeader {
+	display: flex;
+	justify-content: space-between;
+	background-color: #e4e4e4;
+	align-items: center;
+	padding: 5px;
+	height: 1.5rem;
+}
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td,
+th {
+	border-style: solid none;
+	border-width: 0.2px;
+	border-color: #dddddd;
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	background-color: #dadada;
+}
