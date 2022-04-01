@@ -3,6 +3,7 @@ import Split from 'react-split';
 
 import List from '../List';
 import SplitPositionCard from '../SplitPositionCard';
+import Form from '../Form';
 
 import './Container.css';
 
@@ -51,8 +52,10 @@ function Container() {
 					onDrag={(e) => setSplitBottom(e)}
 					sizes={JSON.parse(localStorage.getItem('bottom')) || splitBottom}
 				>
-					<div>Container</div>
-					<div>Container</div>
+					<div>
+						<Form />
+					</div>
+					<div>Lorem Ipsum</div>
 				</Split>
 			</Split>
 		</>
