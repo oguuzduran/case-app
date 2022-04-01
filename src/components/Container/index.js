@@ -1,35 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Split from 'react-split';
 
 import List from '../List';
+import SplitPositionCard from '../SplitPositionCard';
 
 import './Container.css';
 
 function Container() {
+	const [splitTop, setSplitTop] = useState(JSON.parse(localStorage.getItem('top')) || [60, 40]);
+	const [splitCenter, setSplitCenter] = useState(
+		JSON.parse(localStorage.getItem('center')) || [60, 40],
+	);
+	const [splitBottom, setSplitBottom] = useState(
+		JSON.parse(localStorage.getItem('bottom')) || [60, 40],
+	);
+
 	return (
 		<>
 			<Split
 				className="main-split"
 				direction="vertical"
-				onDragEnd={(e) => localStorage.setItem('center', JSON.stringify(e))}
-				sizes={JSON.parse(localStorage.getItem('center')) || [60, 40]}
+				onDragEnd={(e) => {
+					localStorage.setItem('center', JSON.stringify(e));
+				}}
+				onDrag={(e) => setSplitCenter(e)}
+				sizes={JSON.parse(localStorage.getItem('center')) || splitCenter}
 			>
 				<Split
 					direction="horizontal"
 					className="split"
 					onDragEnd={(e) => localStorage.setItem('top', JSON.stringify(e))}
-					sizes={JSON.parse(localStorage.getItem('top')) || [70, 30]}
+					onDrag={(e) => setSplitTop(e)}
+					sizes={JSON.parse(localStorage.getItem('top')) || splitTop}
 				>
 					<div>
 						<List />
 					</div>
-					<div>Konumlar</div>
+					<div>
+						<SplitPositionCard
+							splitTop={splitTop}
+							splitBottom={splitBottom}
+							splitCenter={splitCenter}
+						/>
+					</div>
 				</Split>
 				<Split
 					direction="horizontal"
 					className="split"
 					onDragEnd={(e) => localStorage.setItem('bottom', JSON.stringify(e))}
-					sizes={JSON.parse(localStorage.getItem('bottom')) || [70, 30]}
+					onDrag={(e) => setSplitBottom(e)}
+					sizes={JSON.parse(localStorage.getItem('bottom')) || splitBottom}
 				>
 					<div>Container</div>
 					<div>Container</div>

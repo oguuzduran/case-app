@@ -1,0 +1,9 @@
+.split-position-card {
+	background-color: yellow;
+	position: relative;
+	float: right;
+	height: 17rem;
+	width: 25rem;
+	margin: 5px;
+	padding: 5px;
+}
