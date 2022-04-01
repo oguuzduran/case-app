@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import './List.css';
+import './List.scss';
 
 import data from '../../data';
 
 function List() {
 	const [listData, setListData] = useState([]);
 	const [list, setList] = useState([]);
-	
+
 	const [selectValue, setSelectValue] = useState('');
 	const [areaControl, setAreaControl] = useState({
 		id: true,

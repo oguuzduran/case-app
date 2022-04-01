@@ -1,9 +1,9 @@
 import React from 'react';
-import './Form.css';
+import './Form.scss';
 const Form = () => {
 	return (
 		<>
-			<div className='form'>
+			<div className="form">
 				<form>
 					<input type="text" value="no giriniz." name="id" />
 					<input type="text" value="kontrat giriniz." name="kontrat" />

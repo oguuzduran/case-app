@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './SplitPositionCard.css';
+import './SplitPositionCard.scss';
 const SplitPositionCard = ({ splitTop, splitBottom, splitCenter }) => {
 	return (
 		<div className="split-position-card">

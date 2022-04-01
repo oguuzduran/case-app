@@ -5,7 +5,7 @@ import List from '../List';
 import SplitPositionCard from '../SplitPositionCard';
 import Form from '../Form';
 
-import './Container.css';
+import './Container.scss';
 
 function Container() {
 	const [splitTop, setSplitTop] = useState(JSON.parse(localStorage.getItem('top')) || [60, 40]);
