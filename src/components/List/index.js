@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './List.scss';
 
 import data from '../../data';
+import settings from '../../images/svg/settings.svg';
 
 function List() {
 	const [listData, setListData] = useState([]);
 	const [list, setList] = useState([]);
+	const [settingsVisibility, setSettingsVisibility] = useState(false);
 
 	const [selectValue, setSelectValue] = useState('');
 	const [areaControl, setAreaControl] = useState({
@@ -41,44 +43,62 @@ function List() {
 					</select>
 				</div>
 				<div>
-					<input
-						type="checkbox"
-						id="id"
-						name="id"
-						value="id"
-						checked={areaControl.id}
-						onChange={() => setAreaControl({ ...areaControl, id: !areaControl.id })}
+					<img
+						src={settings}
+						alt=""
+						className="settings-img"
+						onClick={() => setSettingsVisibility(!settingsVisibility)}
 					/>
-					<label htmlFor="id">ID</label>
+					{settingsVisibility && (
+						<div className="settings">
+							<div>
+								<input
+									type="checkbox"
+									id="id"
+									name="id"
+									value="id"
+									checked={areaControl.id}
+									onChange={() => setAreaControl({ ...areaControl, id: !areaControl.id })}
+								/>
+								<label htmlFor="id">ID</label>
+							</div>
 
-					<input
-						type="checkbox"
-						id="kontrat"
-						name="kontrat"
-						checked={areaControl.kontrat}
-						onChange={() => setAreaControl({ ...areaControl, kontrat: !areaControl.kontrat })}
-					/>
-					<label htmlFor="kontrat">Kontrat</label>
+							<div>
+								<input
+									type="checkbox"
+									id="kontrat"
+									name="kontrat"
+									checked={areaControl.kontrat}
+									onChange={() => setAreaControl({ ...areaControl, kontrat: !areaControl.kontrat })}
+								/>
+								<label htmlFor="kontrat">Kontrat</label>
+							</div>
 
-					<input
-						type="checkbox"
-						id="teklif"
-						name="teklif"
-						value="teklif"
-						checked={areaControl.teklif}
-						onChange={() => setAreaControl({ ...areaControl, teklif: !areaControl.teklif })}
-					/>
-					<label htmlFor="teklif">Teklif</label>
+							<div>
+								<input
+									type="checkbox"
+									id="teklif"
+									name="teklif"
+									value="teklif"
+									checked={areaControl.teklif}
+									onChange={() => setAreaControl({ ...areaControl, teklif: !areaControl.teklif })}
+								/>
+								<label htmlFor="teklif">Teklif</label>
+							</div>
 
-					<input
-						type="checkbox"
-						id="data"
-						name="data"
-						value="data"
-						checked={areaControl.data}
-						onChange={() => setAreaControl({ ...areaControl, data: !areaControl.data })}
-					/>
-					<label htmlFor="data">Data</label>
+							<div>
+								<input
+									type="checkbox"
+									id="data"
+									name="data"
+									value="data"
+									checked={areaControl.data}
+									onChange={() => setAreaControl({ ...areaControl, data: !areaControl.data })}
+								/>
+								<label htmlFor="data">Data</label>
+							</div>
+						</div>
+					)}
 				</div>
 			</div>
 			<table>

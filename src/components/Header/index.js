@@ -22,7 +22,7 @@ function Header() {
 					<span>Çalışma Alanı</span>
 				</div>
 				<div className="ClientSettings">
-					<span data-letters="MN" />
+					<span data-letters="OĞ" />
 					Merhaba, Oğuz
 				</div>
 			</div>

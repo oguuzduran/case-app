@@ -24,3 +24,16 @@ th {
 th {
 	background-color: #dadada;
 }
+
+.settings-img {
+	width: 20px;
+	cursor: pointer;
+}
+
+.settings {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	background-color: #bebebe;
+	padding: 5px;
+}
