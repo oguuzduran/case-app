@@ -1,19 +1,44 @@
 .Header {
-	top: 0px;
 	position: relative;
 	height: 5rem;
-	background-color: gray;
+	background-color: #2d327c;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	padding-left: 20px;
+	color: #fff;
 }
 .ClientInfo {
 	display: flex;
 }
 .WorkingArea {
-	padding-right: 5px;
+	margin-right: 10px;
+	display: flex;
+	align-items: center;
 }
 .ClientSettings {
-	padding-right: 10px;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	margin-right: 10px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+		Verdana, sans-serif;
+}
+
+[data-letters]:before {
+	content: attr(data-letters);
+	display: inline-block;
+	font-size: 1em;
+	width: 2.5em;
+	height: 2.5em;
+	line-height: 2.5em;
+	text-align: center;
+	border-radius: 50%;
+	background: #fff;
+	vertical-align: middle;
+	margin-right: 1em;
+	color: #000;
+}
+
+.layout-svg {
+	filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(24%) hue-rotate(114deg)
+		brightness(108%) contrast(108%);
+	margin-right: 10px;
 }
