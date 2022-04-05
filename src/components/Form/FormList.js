@@ -16,7 +16,7 @@ const FormList = () => {
 					</tr>
 				</thead>
 				<tbody>
-					{contracts.length > 0 &&
+					{contracts.length > 0 ? (
 						contracts.map(({ contract }, index) => (
 							<tr key={index}>
 								<td>{contract.id}</td>
@@ -24,7 +24,10 @@ const FormList = () => {
 								<td>{contract.offer}</td>
 								<td>{contract.data}</td>
 							</tr>
-						))}
+						))
+					) : (
+						<div style={{ margin: '10px' }}>Veri yok...</div>
+					)}
 				</tbody>
 			</table>
 		</div>

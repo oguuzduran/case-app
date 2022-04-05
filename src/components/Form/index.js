@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setFormAction } from '../../action/formAction';
+import { setFormAction } from 'src/action/formAction';
 
-import FormList from './FormList';
+import FormList from 'src/components/Form/FormList';
 
 import './Form.scss';
 
@@ -10,9 +10,6 @@ const Form = () => {
 	const dispatch = useDispatch();
 
 	const [formValues, setFormValues] = useState({ id: '', contract: '', offer: '', data: '' });
-
-	// const formData = useSelector((state) => state.formAction.data);
-	// console.log(data);
 
 	const handleButton = (e) => {
 		e.preventDefault();

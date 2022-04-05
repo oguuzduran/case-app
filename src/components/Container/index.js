@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Split from 'react-split';
 
-import List from '../List';
-import SplitPositionCard from '../SplitPositionCard';
-import Form from '../Form';
+import List from 'src/components/List';
+import SplitPositionCard from 'src/components/SplitPositionCard';
+import Form from 'src/components/Form';
 
 import './Container.scss';
 

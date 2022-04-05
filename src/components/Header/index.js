@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.scss';
 
-import epias from '../../images/svg/epias.svg';
-import layout from '../../images/svg/layout.svg';
+import epias from 'src/images/svg/epias.svg';
+import layout from 'src/images/svg/layout.svg';
 
 function Header() {
 	return (

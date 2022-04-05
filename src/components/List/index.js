@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './List.scss';
+import 'src/components/List/List.scss';
 
-import data from '../../data';
-import settings from '../../images/svg/settings.svg';
+import data from 'src/data';
+import settings from 'src/images/svg/settings.svg';
 
 function List() {
 	const [listData, setListData] = useState([]);
@@ -49,7 +49,7 @@ function List() {
 						className="settings-img"
 						onClick={() => setSettingsVisibility(!settingsVisibility)}
 					/>
-					{settingsVisibility && (
+					{settingsVisibility ? (
 						<div className="settings">
 							<div>
 								<input
@@ -100,6 +100,8 @@ function List() {
 								<label htmlFor="data">Data</label>
 							</div>
 						</div>
+					) : (
+						console.log('Hata')
 					)}
 				</div>
 			</div>
@@ -113,7 +115,7 @@ function List() {
 					</tr>
 				</thead>
 				<tbody>
-					{list.length > 0 &&
+					{list.length > 0 ? (
 						list.map(({ id, contract, offer, data }) => (
 							<tr key={id}>
 								{areaControl.id && <td>{id}</td>}
@@ -121,7 +123,10 @@ function List() {
 								{areaControl.offer && <td>{offer}</td>}
 								{areaControl.data && <td>{data}</td>}
 							</tr>
-						))}
+						))
+					) : (
+						<div>Hata</div>
+					)}
 				</tbody>
 			</table>
 		</div>

@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import formReducer from './action/formAction';
+import formReducer from 'src/action/formAction';
 
 export default configureStore({
 	reducer: {
