@@ -12,8 +12,8 @@ function List() {
 	const [selectValue, setSelectValue] = useState('');
 	const [areaControl, setAreaControl] = useState({
 		id: true,
-		kontrat: true,
-		teklif: true,
+		contract: true,
+		offer: true,
 		data: true,
 	});
 
@@ -25,7 +25,7 @@ function List() {
 
 	useEffect(() => {
 		if (selectValue !== '') {
-			const result = listData.filter((listData) => listData.kontrat === selectValue);
+			const result = listData.filter((listData) => listData.contract === selectValue);
 			setList(result);
 		} else {
 			setList(listData);
@@ -66,24 +66,26 @@ function List() {
 							<div>
 								<input
 									type="checkbox"
-									id="kontrat"
-									name="kontrat"
-									checked={areaControl.kontrat}
-									onChange={() => setAreaControl({ ...areaControl, kontrat: !areaControl.kontrat })}
+									id="contract"
+									name="contract"
+									checked={areaControl.contract}
+									onChange={() =>
+										setAreaControl({ ...areaControl, contract: !areaControl.contract })
+									}
 								/>
-								<label htmlFor="kontrat">Kontrat</label>
+								<label htmlFor="contract">Kontrat</label>
 							</div>
 
 							<div>
 								<input
 									type="checkbox"
-									id="teklif"
-									name="teklif"
-									value="teklif"
-									checked={areaControl.teklif}
-									onChange={() => setAreaControl({ ...areaControl, teklif: !areaControl.teklif })}
+									id="offer"
+									name="offer"
+									value="offer"
+									checked={areaControl.offer}
+									onChange={() => setAreaControl({ ...areaControl, offer: !areaControl.offer })}
 								/>
-								<label htmlFor="teklif">Teklif</label>
+								<label htmlFor="offer">Teklif</label>
 							</div>
 
 							<div>
@@ -105,18 +107,18 @@ function List() {
 				<thead>
 					<tr>
 						{areaControl.id && <th>Id</th>}
-						{areaControl.kontrat && <th>Kontrat</th>}
-						{areaControl.teklif && <th>Teklif</th>}
+						{areaControl.contract && <th>Kontrat</th>}
+						{areaControl.offer && <th>Teklif</th>}
 						{areaControl.data && <th>Data</th>}
 					</tr>
 				</thead>
 				<tbody>
 					{list.length > 0 &&
-						list.map(({ id, kontrat, teklif, data }) => (
+						list.map(({ id, contract, offer, data }) => (
 							<tr key={id}>
 								{areaControl.id && <td>{id}</td>}
-								{areaControl.kontrat && <td>{kontrat}</td>}
-								{areaControl.teklif && <td>{teklif}</td>}
+								{areaControl.contract && <td>{contract}</td>}
+								{areaControl.offer && <td>{offer}</td>}
 								{areaControl.data && <td>{data}</td>}
 							</tr>
 						))}

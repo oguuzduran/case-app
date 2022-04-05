@@ -5,16 +5,16 @@ export const formAction = createSlice({
 	initialState: {
 		contracts: [
 			{
-				contract: { id: '1', kontrat: '2018', teklif: '2342', data: 'Satış' },
+				contract: { id: '1', contract: '2018', offer: '2342', data: 'Satış' },
 			},
 			{
-				contract: { id: '2', kontrat: '2019', teklif: '1232', data: 'Alış' },
+				contract: { id: '2', contract: '2019', offer: '1232', data: 'Alış' },
 			},
 			{
-				contract: { id: '3', kontrat: '2019', teklif: '5433', data: 'Satış' },
+				contract: { id: '3', contract: '2019', offer: '5433', data: 'Satış' },
 			},
 			{
-				contract: { id: '4', kontrat: '2018', teklif: '3223', data: 'Alış' },
+				contract: { id: '4', contract: '2018', offer: '3223', data: 'Alış' },
 			},
 		],
 	},

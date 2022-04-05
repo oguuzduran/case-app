@@ -9,7 +9,7 @@ import './Form.scss';
 const Form = () => {
 	const dispatch = useDispatch();
 
-	const [formValues, setFormValues] = useState({ id: '', kontrat: '', teklif: '', data: '' });
+	const [formValues, setFormValues] = useState({ id: '', contract: '', offer: '', data: '' });
 
 	// const formData = useSelector((state) => state.formAction.data);
 	// console.log(data);
@@ -33,14 +33,14 @@ const Form = () => {
 					<input
 						type="text"
 						placeholder="kontrat giriniz."
-						name="kontrat"
-						onChange={(e) => setFormValues({ ...formValues, kontrat: e.target.value })}
+						name="contract"
+						onChange={(e) => setFormValues({ ...formValues, contract: e.target.value })}
 					/>
 					<input
 						type="text"
 						placeholder="teklif giriniz."
-						name="teklif"
-						onChange={(e) => setFormValues({ ...formValues, teklif: e.target.value })}
+						name="offer"
+						onChange={(e) => setFormValues({ ...formValues, offer: e.target.value })}
 					/>
 					<input
 						type="text"

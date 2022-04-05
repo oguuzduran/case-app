@@ -20,8 +20,8 @@ const FormList = () => {
 						contracts.map(({ contract }, index) => (
 							<tr key={index}>
 								<td>{contract.id}</td>
-								<td>{contract.kontrat}</td>
-								<td>{contract.teklif}</td>
+								<td>{contract.contract}</td>
+								<td>{contract.offer}</td>
 								<td>{contract.data}</td>
 							</tr>
 						))}
