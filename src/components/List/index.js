@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import 'src/components/List/List.scss';
+import { ReactSVG } from 'react-svg';
 
 import data from 'src/data';
+import InputText from 'src/components/FormComponents/InputText';
+
+import 'src/components/List/List.scss';
 import settings from 'src/images/svg/settings.svg';
 
 function List() {
@@ -43,16 +46,16 @@ function List() {
 					</select>
 				</div>
 				<div>
-					<img
+					<ReactSVG
 						src={settings}
-						alt=""
 						className="settings-img"
+						width={'100px'}
 						onClick={() => setSettingsVisibility(!settingsVisibility)}
 					/>
 					{settingsVisibility ? (
 						<div className="settings">
 							<div>
-								<input
+								<InputText
 									type="checkbox"
 									id="id"
 									name="id"
@@ -64,7 +67,7 @@ function List() {
 							</div>
 
 							<div>
-								<input
+								<InputText
 									type="checkbox"
 									id="contract"
 									name="contract"
@@ -77,7 +80,7 @@ function List() {
 							</div>
 
 							<div>
-								<input
+								<InputText
 									type="checkbox"
 									id="offer"
 									name="offer"
@@ -89,7 +92,7 @@ function List() {
 							</div>
 
 							<div>
-								<input
+								<InputText
 									type="checkbox"
 									id="data"
 									name="data"
@@ -100,35 +103,31 @@ function List() {
 								<label htmlFor="data">Data</label>
 							</div>
 						</div>
-					) : (
-						console.log('Hata')
-					)}
+					) : null}
 				</div>
 			</div>
-			<table>
-				<thead>
-					<tr>
-						{areaControl.id && <th>Id</th>}
-						{areaControl.contract && <th>Kontrat</th>}
-						{areaControl.offer && <th>Teklif</th>}
-						{areaControl.data && <th>Data</th>}
-					</tr>
-				</thead>
-				<tbody>
-					{list.length > 0 ? (
-						list.map(({ id, contract, offer, data }) => (
+			{list.length ? (
+				<table>
+					<thead>
+						<tr>
+							{areaControl.id ? <th>Id</th> : null}
+							{areaControl.contract ? <th>Kontrat</th> : null}
+							{areaControl.offer ? <th>Teklif</th> : null}
+							{areaControl.data ? <th>Data</th> : null}
+						</tr>
+					</thead>
+					<tbody>
+						{list.map(({ id, contract, offer, data }) => (
 							<tr key={id}>
-								{areaControl.id && <td>{id}</td>}
-								{areaControl.contract && <td>{contract}</td>}
-								{areaControl.offer && <td>{offer}</td>}
-								{areaControl.data && <td>{data}</td>}
+								{areaControl.id ? <td>{id}</td> : null}
+								{areaControl.contract ? <td>{contract}</td> : null}
+								{areaControl.offer ? <td>{offer}</td> : null}
+								{areaControl.data ? <td>{data}</td> : null}
 							</tr>
-						))
-					) : (
-						<div>Hata</div>
-					)}
-				</tbody>
-			</table>
+						))}
+					</tbody>
+				</table>
+			) : null}
 		</div>
 	);
 }

@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './SplitPositionCard.scss';
+
 const SplitPositionCard = ({ splitTop, splitBottom, splitCenter }) => {
 	return (
 		<div className="split-position-card">
@@ -20,6 +22,18 @@ const SplitPositionCard = ({ splitTop, splitBottom, splitCenter }) => {
 			</p>
 		</div>
 	);
+};
+
+SplitPositionCard.propTypes = {
+	splitTop: PropTypes.array,
+	splitBottom: PropTypes.array,
+	splitCenter: PropTypes.array,
+};
+
+SplitPositionCard.defaultProps = {
+	splitTop: [60, 40],
+	splitBottom: [60, 40],
+	splitCenter: [60, 40],
 };
 
 export default SplitPositionCard;

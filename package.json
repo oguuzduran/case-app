@@ -13,6 +13,7 @@
 		"react-redux": "^7.2.8",
 		"react-scripts": "5.0.0",
 		"react-split": "^2.0.14",
+		"react-svg": "^14.1.17",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {

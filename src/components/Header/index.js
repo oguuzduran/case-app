@@ -1,5 +1,6 @@
 import React from 'react';
 import './Header.scss';
+import { ReactSVG } from 'react-svg';
 
 import epias from 'src/images/svg/epias.svg';
 import layout from 'src/images/svg/layout.svg';
@@ -8,17 +9,11 @@ function Header() {
 	return (
 		<div className="Header">
 			<div>
-				<img src={epias} width="70px" alt="" />
+				<ReactSVG src={epias} width="70px" />
 			</div>
 			<div className="ClientInfo">
 				<div className="WorkingArea">
-					<img
-						src={layout}
-						alt=""
-						width="30px"
-						// style={{ backgroundColor: '#fff', marginRight: '10px' }}
-						className="layout-svg"
-					/>
+					<ReactSVG src={layout} className="layout-svg" />
 					<span>Çalışma Alanı</span>
 				</div>
 				<div className="ClientSettings">
